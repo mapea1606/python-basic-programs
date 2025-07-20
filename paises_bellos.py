@@ -1,3 +1,7 @@
+#Programa que arroja una lista de tuplas de dos entradas
+#con los países más bellos en orden descendente.
+#La función trabaja a partir de dos listas bidimensionales dadas.
+
 paises = [[0, "España", "Madrid"],
           [2, "Alemania", "Berlin"],
           [1, "Francia", "Paris"],
@@ -8,8 +12,6 @@ belleza = [[2, 0.57],
            [3, 0.68],
            [0, 0.62]]
 
-#print(paises)
-#print(belleza)
 
 def paises_bellos(paises, belleza):
     pais_bello = []
