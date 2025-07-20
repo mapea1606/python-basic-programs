@@ -2,16 +2,15 @@
 #con los países más bellos en orden descendente.
 #La función trabaja a partir de dos listas bidimensionales dadas.
 
-paises = [[0, "España", "Madrid"],
-          [2, "Alemania", "Berlin"],
+paises = [[0, "España", "Madrid"],    #Lista de países con un id
+          [2, "Alemania", "Berlin"],  #el país y su capital
           [1, "Francia", "Paris"],
           [3, "Italia", "Roma"]]
 
-belleza = [[2, 0.57],
-           [1, 0.81],
+belleza = [[2, 0.57],                 #Lista con el id que identifica
+           [1, 0.81],                 #a cada país y su indice de belleza
            [3, 0.68],
            [0, 0.62]]
-
 
 def paises_bellos(paises, belleza):
     pais_bello = []
