@@ -14,4 +14,11 @@ boletas = [{"fecha_compra" : "29-05-22",
             "productos" : {"Mantequilla": 2, "Azucar" : 1}
             }]
 
-print(boletas)
+def precio_total(boletas):
+    total = 0
+    for boleta in boletas:
+        total = total + boleta["precio"]
+    return total
+
+print(precio_total(boletas))
+        
