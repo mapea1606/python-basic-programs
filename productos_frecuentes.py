@@ -13,11 +13,17 @@ boletas = [{"fecha_compra" : "29-05-22",
             "precio" : 3000,
             "productos" : {"Mantequilla": 2, "Azucar" : 1}
             }]
-
-sets = []
+i = 0
+productos_boleta = []
+productos_comprados = set()
 for boleta in boletas:
-    sets.append(set(boleta["productos"]))
+    productos_boleta.append(set(boleta["productos"]))
+    productos_comprados = productos_comprados | productos_boleta[i]
+    i += 1
 
+for elem in productos_boleta:
+    print(productos_comprados & elem)
+    
+print(productos_comprados)
+    
 
-
-print(sets)
