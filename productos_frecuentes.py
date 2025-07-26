@@ -17,13 +17,20 @@ i = 0
 productos_boleta = []
 productos_comprados = set()
 for boleta in boletas:
-    productos_boleta.append(set(boleta["productos"]))
-    productos_comprados = productos_comprados | productos_boleta[i]
-    i += 1
+    productos_boleta = productos_boleta + list(boleta["productos"])
+    productos_comprados = set(productos_boleta)
 
-for elem in productos_boleta:
-    print(productos_comprados & elem)
-    
-print(productos_comprados)
+frecuencia = []
+productos_frecuentes = set()
+for elem in productos_comprados:
+    frecuencia = productos_boleta.count(elem)
+    porcentaje = frecuencia / len(boletas)
+    if porcentaje >= 0.5:
+        productos_frecuentes.add(elem)
+print(productos_frecuentes)
+
+        
+
+
     
 
