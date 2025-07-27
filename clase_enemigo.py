@@ -5,13 +5,13 @@ class Enemigo:
         self.fuerza_ataque = fuerza_ataque
 
     def recibir_ataque(self, daño):
-        if vida <= daño:
-            vida = 0
+        if self.vida <= daño:
+            self.vida = 0
         else:
-            vida = vida - daño
+            self.vida = self.vida - daño
 
     def atacar(self, otro):
-        otro.recibir_ataque(fuerza_ataque)
+        otro.recibir_ataque(self.fuerza_ataque)
 
     def __str__(self):
         txt = self.nombre + " - " + str(self.vida)
