@@ -13,21 +13,25 @@ boletas = [{"fecha_compra" : "29-05-22",
             "precio" : 3000,
             "productos" : {"Mantequilla": 2, "Azucar" : 1}
             }]
-i = 0
-productos_boleta = []
-productos_comprados = set()
-for boleta in boletas:
-    productos_boleta = productos_boleta + list(boleta["productos"])
-    productos_comprados = set(productos_boleta)
 
-frecuencia = []
-productos_frecuentes = set()
-for elem in productos_comprados:
-    frecuencia = productos_boleta.count(elem)
-    porcentaje = frecuencia / len(boletas)
-    if porcentaje >= 0.5:
-        productos_frecuentes.add(elem)
-print(productos_frecuentes)
+def productos_frecuentes(boletas):
+    productos_boleta = []
+    productos_comprados = set()
+    for boleta in boletas:
+        productos_boleta = productos_boleta + list(boleta["productos"])
+        productos_comprados = set(productos_boleta)
+
+    frecuencia = []
+    productos_frecuentes = set()
+    for elem in productos_comprados:
+        frecuencia = productos_boleta.count(elem)
+        porcentaje = frecuencia / len(boletas)
+        if porcentaje >= 0.5:
+            productos_frecuentes.add(elem)
+
+    return productos_frecuentes
+
+print(productos_frecuentes(boletas))
 
         
 
