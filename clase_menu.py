@@ -9,7 +9,7 @@ class Menu:
         for i in range(len(self.comidas)):
             if i < len(self.comidas)-1:
                 txt = txt + self.comidas[i] + ": " + str(self.precios[i]) + "\n"
-            elif i == len(comidas)-1:
+            elif i == len(self.comidas)-1:
                 txt = txt + self.comidas[i] + ": " + str(self.precios[i])
         return txt
 
