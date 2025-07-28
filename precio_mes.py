@@ -51,23 +51,28 @@ def precio_mes(boletas):
     return precio_mes
 
 def precio_mes2(boletas):
-    precio_fecha = dict()
-    mensualidad = 0
 
+    precio_fecha = dict()
     for boleta in boletas:
         precio_fecha[boleta["fecha_compra"]] = boleta["precio"]
 
-    precio_mes = list()
-
+    cuentas_mes = list()
     for t in precio_fecha.items():
-        precio_mes.append((t[0][3:],t[1]))
+        cuentas_mes.append((t[0][3:],t[1]))
+    cuentas_mes.sort()
 
-    precio_mes.sort()
+    meses = []
+    for elem in cuentas_mes:
+        meses.append(elem[0])
+    meses = set(meses)
 
-    cuenta_mes = dict()
-
-    for elem in precio_fecha.items():
-
+    precio_mes = dict()
+    for mes in meses:
+        mensualidad = 0
+        for elem in cuentas_mes:
+            if elem[0] == mes:
+                mensualidad = mensualidad + elem[1]
+                precio_mes[elem[0]] = mensualidad
 
     return precio_mes
 
