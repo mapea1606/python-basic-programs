@@ -4,7 +4,7 @@ class Mascota:
         self.dueño = h
 
     def saludar(self, humano):
-        if humano.nombre == self.dueño.nombre:
+        if humano == self.dueño:
             return 'Hola '+ humano.nombre
         return 'grrr, no te conozco ' + humano.nombre
 
