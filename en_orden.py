@@ -9,7 +9,9 @@ def en_orden(lista, ordenada):
         return ordenada
     return en_orden(lista[0], ordenada)
 
+
 ordenada = []
 en_orden(lista, ordenada)
+print(ordenada)
 for x in ordenada:
     print(x)
