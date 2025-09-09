@@ -5,9 +5,11 @@ lista2 = []
 def en_orden(lista, ordenada):
     ordenada.append(lista)
     if type(lista) == list:
-        ordenada.append(lista[0])
+        primero = lista[0]
+        resto = lista[1:]
+        ordenada.append(primero)
         return ordenada
-    return en_orden(lista[0], ordenada)
+    return primero + en_orden(resto, ordenada)
 
 
 ordenada = []
