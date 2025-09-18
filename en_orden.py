@@ -4,16 +4,13 @@ lista2 = []
 
 def en_orden(lista, ordenada):
     ordenada.append(lista)
-    if type(lista[0]) == list:
-        ordenada.append(lista[0])
-        return ordenada
-    else:
-        ordenada = []
-        return en_orden(lista[1:], ordenada)
-
+    for elemento in lista: 
+        if type(elemento) == list:
+            en_orden(elemento, ordenada) 
+    return ordenada
 
 ordenada = []
 en_orden(lista, ordenada)
 print(ordenada)
-#for x in ordenada:
-#    print(x)
+for x in ordenada:
+    print(x)
