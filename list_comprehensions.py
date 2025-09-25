@@ -1,26 +1,36 @@
+def sucesion(componente):
+    sucesion = list()
+    i = 0
+    while i <= componente:
+        sucesion.append(i)
+        i += 1
+    return sucesion
+
+def tripletas(x, y, z):
+    tripletas = list()
+    for i in X:
+        for j in Y:
+            for k in Z:
+                tripletas.append([i,j,k])
+    return tripletas
+ 
 if __name__ == '__main__':
     x = int(input())
     y = int(input())
     z = int(input())
     n = int(input())
 
-    X = list()
-    i = 0
-    while i <= x:
-        X.append(i)
-        i += 1
+    X = sucesion(x) 
+    Y = sucesion(y)
+    Z = sucesion(z)
 
-    Y = list()
-    j = 0
-    while j <= y:
-        Y.append(j)
-        j += 1
+    T = tripletas(X, Y, Z)
 
-    Z = list()
-    k = 0
-    while k <= z:
-        Z.append(k)
-        k += 1
+    nueva_T = list()
 
-    print(f"{X},{Y},{Z}")
+    for elem in T:
+        if sum(elem) != n:
+            nueva_T.append(elem)
     
+    print(nueva_T)
+
