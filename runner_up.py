@@ -3,10 +3,14 @@ if __name__ == '__main__':
     while n < 2 or n > 10:
         n = int(input())
 
-    arr = map(int, input().split()) 
-
+    arr = map(int, input().split())
     arr = list(arr)
     arr = arr[:n]
+
+    while min(arr) < -100 or max(arr) > 100:
+        arr = map(int, input().split())
+        arr = list(arr)
+        arr = arr[:n]
 
     arr = set(arr)
     arr = list(arr)
